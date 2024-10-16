@@ -7,44 +7,36 @@
   </head>
   <body>
     <script>
-      //variables
-      //Con el prompt le estamos solicitando al usuario que nos dé a notros los valores a utilizar
+        //Vamos a crear 3 variables para resolver la ecuacion de 2 grado
+        //Utilizamos el prompt para decirle al usuario que el nos va a dar los datos para resolver la ecuacion
       var a = prompt("Ingrese el valor a");
       var b = prompt("Ingrese el valor b");
       var c = prompt("Ingrese el valor c");
-      //La ecuación de segundo grado nos mostrara 2 posibles resultados para X(x1 y x2)
-      //Esta es la fórmula general para poder sacar una ecuación de 2 grado
-      //x2=(-b - sqrt(pow(b,2)-(4*a*c))) / (2*a);
+      //Vamos a utilizar la funcion let para almacenar la informacion que obtegamos de los resultados de la operacion llamada raiz
+      let raiz = Math.pow(b, 2) - (4 * a * c); 
       //función es un conjunto de instrucciones que va a realizar una tarea o un calculo
-      //En este caso estamos creando una función llamada x2 la cual va a tener 3 parámetros
-      //a,b,c
+      //En este caso estamos creando una función llamada x2 la cual va a tener 3 parámetros(a,b,c)
       function x1(a, b, c) {
-        //Esta parte de la ecuación tiene una pequeña diferencia al tener un signo positivo
-        //----------↓---------------------------------
-        return (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
         //Return finaliza la ejecución de la función y el resultado del valor será devuelto a quien llama a la función
-      }
-      //Creamos una variables llamada resultadox1 que nos diga cual será la respuesta de nuestra función x1 con los parámetros a,b,c
-      var resultadox1 = x1(a, b, c);
-      //Le indicamos que nos muestre una alerta con la respuesta de la variable resultadosx1
-      alert("x1=" + resultadox1);
-
-      //En este caso estamos creando una función llamada x2 la cual va a tener 3 parámetros
-      //a,b,c
+        return (((-b)+(Math.sqrt(raiz))))/(2*a);
+    }
+    //Creamos una variables llamada resultadox1 que nos diga cual será la respuesta de nuestra función x1 con los parámetros a,b,c
+      var resultado_x1 = x1(a, b, c);
+    //Le indicamos que nos muestre una alerta con la respuesta de la variable resultadosx1    
+        alert("x1=" + resultado_x1);       
+      //En este caso estamos creando una función llamada x2 la cual va a tener 3 parámetros(a,b,c)   
       function x2(a, b, c) {
-        //Esta parte de la ecuación tiene una pequeña diferencia al tener un signo negativo
-        //---------↓---------------------------------
-        return (-b - sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
         //Return finaliza la ejecución de la función y el resultado del valor será devuelto a quien llama a la función
+        return (((-b)-(Math.sqrt(raiz))))/(2*a);
         //sqrt y pow son funciones matemáticas
         //El sqrt calcula la raíz cuadrada de algún valor, en este caso sería sqrt(pow(b,2)-(4*a*c))) que traducido sería algo como esto(b^2-4*a*c) pero dicho valor dentro de una raíz cuadrada
         //El pow eleva algún exponente a mi base, en este caso b,2 seria b^2
-        //El 2*a es la parte de abajo de nuestra formula general
       }
-      //Creamos una variables llamada resultadox2 que nos diga cual será la respuesta de nuestra función x2 con los parámetros a,b,c
-      var resultadox2 = x2(a, b, c);
+        //Creamos una variables llamada resultadox2 que nos diga cual será la respuesta de nuestra función x2 con los parámetros a,b,c
+      var resultado_x2 = x2(a, b, c);
       //Le indicamos que nos muestre una alerta con la respuesta de la variable resultadosx2
-      alert("x2=" + resultadox2);
+      alert("x2=" + resultado_x2);
+
     </script>
   </body>
 </html>
